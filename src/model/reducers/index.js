@@ -1,6 +1,8 @@
 import createReducer from 'redux-action-reducer'
 import { combineReducers } from 'redux'
 import { set, get, constant } from 'lodash/fp'
+import { routerReducer as routing } from 'react-router-redux'
+
 
 export const cakes = createReducer(
   ['CAKES_FULFILLED'],
@@ -23,5 +25,6 @@ export const selectedCake = createReducer('SELECT_CAKE')('')
 export default combineReducers({
   add,
   cakes,
+  routing,
   selectedCake
 })
