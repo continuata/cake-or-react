@@ -1,0 +1,28 @@
+.label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+span {
+  font-size: 24px;
+}
+
+input {
+  margin: 10px 0px 10px 20px;
+  height: 30px;
+  width: 300px;
+  background-color: #eee;
+  font-size: 18px;
+}
+
+.cancel-link {
+  margin-top: 10px;
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cancel-link:hover {
+  color: #aaa;
+}
