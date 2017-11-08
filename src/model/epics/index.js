@@ -36,6 +36,21 @@ const addACakeEpic = (action$, store) =>
     .switchMap(() => {
       const id = random(1e10, 1e11)
       const body = get('add', store.getState())
+      /*
+        I WOULD BE ADDING THE CAKE HERE USING REST-PUT AND THEN TRIGGERING getCakes()
+        BUT API THROWS 503 ERROR ON THE PUT DUE TO CORS, SO HAVE MOCKED IT IN REDUX
+
+        ajax({
+          method: 'PUT',
+          url: `${cakesUrl}/${id}`,
+          body,
+          responseType: 'json',
+          crossDomain: true
+        })
+          .map(xhr => actions.getCakes())
+          .catch(err => Observable.of(actions.cakesErrored(err)))
+          .startWith(actions.cakesPending())
+      */
       return Observable.of(actions.addCakeFulfilled({ ...body, id }), push('/'))
     })
 
